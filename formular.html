@@ -21,19 +21,27 @@
             </ul>
         </nav>
     </header>
-    <main style="margin: 0; padding: 20px; background-color: #f5f5f5; text-align: center;"> 
+    <main style="margin: 0; padding: 20px; background-color: #f5f5f5;"> 
         <form action="submit_order.html">
             <label for="jméno produktu">Jméno produktu:</label>
-            <input type="text" id="name" name="Jméno produktu" placeholder="např. Plain Keycaps "><br><br>
+            <input type="text" id="name" name="Jméno produktu" placeholder="např. Plain Keycaps " class="form-control"><br><br>
 
             <label for="EMail adresa">Email adresa:</label>
-            <input type="email" id="email" name="Email adresa" placeholder="např. user@gmail.com" required><br><br>
+            <div class="input-group">
+                <input type="text" name="mailbox" id="mailbox" class="form-control" required>
+                <span class="input-group-text">@</span> 
+                <select name="domain" id="domain" class="form-select">
+                  <option value="educanet.cz">email.cz</option>
+                  <option value="gmail.com">gmail.com</option>
+                  <option value="gmail.com">centrum.cz</option>
+                </select>
+              </div><br><br>
 
             <label for="Množství">Množství:</label>
             <input type="number" id="quantity" name="Množství" min="1" required><br><br>
 
             <label for="Jméno a příjmení">Jméno a příjmení:</label>
-            <input type="text" id="name" name="Jméno a příjmení" placeholder="John Scott"><br><br>
+            <input type="text" id="name" name="Jméno a příjmení" placeholder="John Scott" class="form-control"><br><br>
 
             <label for="zeme"> Země: </label>
                 <select name="zeme">
@@ -55,8 +63,13 @@
                 </select><br><br>
             <input type="checkbox" name="Podmínky" value="souhlas" required>
                 <label for="souhlas">Souhlasím s obchodními podmínkami</label><br><br>
+                <div class="form-check">
+                    <input type="checkbox" id="sign" name="sign" class="form-check-input">
+                    <label for="sign" class="form-check" aria-colcount="form-check-label">Připojit podpis</label>
+                  </div><br><br>
             <input type="submit" value="Odeslat formulář">
         </form>
+        
     </main>
     <footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
         <a href="index.html">
